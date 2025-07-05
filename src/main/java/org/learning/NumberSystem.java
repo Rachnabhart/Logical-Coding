@@ -28,8 +28,10 @@ public class NumberSystem {
         sumOfPrime(30);
         betweenSum(2,10);
         reversePrime();*/
-        multipleOfPrime();
-      //  multiple(200);
+       // multipleOfPrime();
+        beforeMultiple();
+        //primeInRaising(30);
+        //primeDescending(5);
 
     }
 
@@ -360,17 +362,48 @@ public class NumberSystem {
         }
     }
 
-    public static void multiple(int n){
-        int num =10;
-        while (num<n){
-            if(num%10==0){
-                if(isPrime(num)){
-                    System.out.println( num );
-                }
+    public static void beforeMultiple() {
+         int beforePrime=0;
+        for(int i = 2; i<200; i++){
+            if(isPrime(i)) {
+                beforePrime = i;
+            }
+            if(i%10==0){
+                System.out.println(beforePrime);
+
             }
         }
     }
-    public static void justBeforeMultiple(){
 
+
+    public static void primeInRaising(int n){
+      int count =0;
+      int num=11;
+        System.out.println(" Prime number in raising order:-  ");
+        while(count<n){
+          if(isPrime(num)){
+              System.out.println( num );
+              count ++;
+          } num++;
+      }
     }
+
+    public static void primeDescending(int n){
+        int count=0;
+        int num=10;
+        System.out.println("Prime number in descending order:-  ");
+        while(count<n){
+            if(isPrime(num)){
+                count++;
+            }
+            num++;
+        }
+        for(int i = num; i >10; i--){
+            if(isPrime(i)){
+                System.out.println(i);
+            }
+        }
+    }
+
+
 }
