@@ -27,12 +27,16 @@ public class NumberSystem {
         primefrom100(20);
         sumOfPrime(30);
         betweenSum(2,10);
-        reversePrime();*/
+        reversePrime();
        // multipleOfPrime();
-        beforeMultiple();
+        //beforeMultiple();
         //primeInRaising(30);
         //primeDescending(5);
-
+        //fibonacci(15);
+         // tillFibonacci(100,10000);*/
+       // reverseOrderFibonacci();
+        armstrong(371);
+        initialArmstrong(200);
     }
 
     public static void largerNo(int a, int b) {
@@ -403,6 +407,78 @@ public class NumberSystem {
                 System.out.println(i);
             }
         }
+    }
+    public static void fibonacci(int n){
+        int firstNo = 0;
+        int secondNo =1;
+        System.out.println( firstNo );
+        System.out.println(secondNo);
+        for(int i=0;i<n; i++){
+            int thirdNo= firstNo + secondNo;
+            System.out.println( thirdNo );
+            firstNo = secondNo;
+            secondNo = thirdNo;
+        }
+    }
+
+    public static void tillFibonacci(int n1, int n2){
+        int firstNo = 100;
+        int secondNo = 102;
+        System.out.println( firstNo );
+        System.out.println( secondNo);
+        for(int i = n1; i<n2; i++){
+            int thirdNo = firstNo +secondNo;
+            System.out.println( thirdNo);
+            firstNo= secondNo;
+            secondNo = thirdNo;
+        }
+    }
+
+    public static void reverseOrderFibonacci(){
+        int firstNo = 500;
+        int secondNo = 501;
+        System.out.println( firstNo );
+        System.out.println( secondNo);
+        for(int i = 5000; i<500; i--) {
+            int thirdNo = firstNo+ secondNo;
+            System.out.println(thirdNo);
+            firstNo = secondNo;
+            secondNo = thirdNo;
+        }
+    }
+
+    public  static void armstrong(int n){
+        int num = n;
+        int temp=0;
+        int rem=0;
+        while (n>0){
+            rem= n%10;
+            temp=temp + (rem*rem*rem);
+            n/=10;
+        }
+        if(temp==num){
+            System.out.println(" it is armstrong.");
+        }
+        else{
+            System.out.println(" it is not armstrong number.");
+        }
+    }
+
+    public static void initialArmstrong(int n){
+        int temp=0;
+        //int num=n;
+        int rem=0;
+        for(int i=10;i<n;i++) {
+            while (n > 0) {
+                rem = n % 10;
+                temp = temp + (rem * rem + rem);
+                n /= 10;
+            }
+            if(i== temp){
+                System.out.println(i);
+            }
+        }
+
     }
 
 
